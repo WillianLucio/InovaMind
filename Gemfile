@@ -23,9 +23,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard.
 gem 'jwt'
+# Ruby ODM framework for MongoDB
 gem 'mongoid', '~> 7.0'
+# Nokogiri is a Rubygem providing HTML, XML, SAX, and Reader parsers with XPath and CSS selector support.
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+# Serializer json
+gem 'active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
