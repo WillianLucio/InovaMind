@@ -1,24 +1,19 @@
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test Project for Inovamind Admission.
 
-Things you may want to cover:
+ * Ruby version 2.4.1
+ * Rails Version 5.2.2
 
-* Ruby version
+ * System dependencies
+	* Database MongoDb
+	   https://docs.mongodb.com/manual/installation/
 
-* System dependencies
+* How to run project run this commands
 
-* Configuration
+  ```git clone https://github.com/WillianLucio/InovaMind.git```
 
-* Database creation
+  ```bundle install```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  ```rails s```
