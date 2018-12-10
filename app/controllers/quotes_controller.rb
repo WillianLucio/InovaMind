@@ -12,10 +12,13 @@ class QuotesController < ApplicationController
     end
   end
 
+  private
+
   def authenticate
     authenticate_or_request_with_http_token do |token|
-      hmac_secret = 'inovamind<3'
-      JWT.decode token, hmac_secret, true, algorithm: 'HS256'
+      JWT.decode token, Rails.application.secrets.HMAC_SECRET, true, algorithm: 'HS256'
     end
+  rescue
+    render json: '', status: :forbidden
   end
 end

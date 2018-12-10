@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   get 'quotes/:tag_search', to: 'quotes#search', as: :quotes_search
-  resources :authentications, only: %i[create index]
+  resources :authentications, only: :create
 end
