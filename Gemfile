@@ -31,6 +31,10 @@ gem 'mongoid', '~> 7.0'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 # Serializer json
 gem 'active_model_serializers'
+# A Ruby client library for Redis
+gem 'redis'
+# Simple, efficient background processing for Ruby
+gem 'sidekiq'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
