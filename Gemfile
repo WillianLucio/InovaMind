@@ -35,6 +35,8 @@ gem 'active_model_serializers'
 gem 'redis'
 # Simple, efficient background processing for Ruby
 gem 'sidekiq'
+# Manage Procfile-based applications
+gem 'foreman'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
