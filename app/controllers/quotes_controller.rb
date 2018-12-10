@@ -2,8 +2,14 @@ class QuotesController < ApplicationController
   before_action :authenticate, only: :search
 
   def search
-    quotes = Quote.search(params['tag_search'])
-    render json: { quotes: ActiveModelSerializers::SerializableResource.new(quotes) }
+    if Quote.tag_searched?(params['tag_search'])
+      quotes = Quote.elem_match(tags: { tag: params['tag_search'] })
+      render json: { quotes: ActiveModelSerializers::SerializableResource.new(quotes) }
+    else
+      render json: { quotes: ActiveModelSerializers::SerializableResource.new(
+        QuotesScraper.scraping(params['tag_search'])
+      ) }
+    end
   end
 
   def authenticate
