@@ -1,9 +1,6 @@
 class QuoteSerializer < ActiveModel::Serializer
-  attributes :quote, :author, :author_about, :tags
-
-  def quote
-    object.text
-  end
+  attribute :text, key: :quote
+  attributes :author, :author_about, :tags
 
   def tags
     object.tags.map { |tag| tag[:tag] }

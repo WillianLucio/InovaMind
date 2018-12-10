@@ -9,16 +9,16 @@ class QuotesScraper
       end
 
       if tags.include?(tag: tag_search, searched: true)
-        quotes << {
+        quote = Quote.new(
           text: quote_html.css('.text').first.content,
           author: quote_html.css('.author').first.content,
           author_about: quote_html.css('a').first['href'],
           tags: tags
-        }
+        )
+        QuotesCreatorJob.perform_later(quote.attributes.except('_id'))
+        quotes << quote
       end
     end
-
-    QuotesCreatorJob.perform_later(quotes)
     quotes
   end
 end
